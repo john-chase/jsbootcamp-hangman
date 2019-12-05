@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hangman Game</h1>
+    <header>
+        <h1>Hangman<span>Game</span></h1>
+    </header>
+    <div>
+        <p>Enter letters or numbers (type anywhere) to guess the word and save the stickman from the gallows! Based on the old pencil and paper (or chalk and chalkboard) <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">game</a>.</p>
+        <div id="puzzle"><!--puzzle dynamically generated here--></div>
+        <br/>
+        <div id="guesses"><!--guesses remaining dynamically generated here--></div>
+        <h4>Play again</h4>
+        <button id="refresh1">Easy</button>
+        <button id="refresh2">Moderate</button>
+        <button id="refresh3">Hard</button>
+    </div>
+    <footer>
+        <p class="footer">This application was created by John Chase in plain vanilla JavaScript and makes use of Local Storage.</p>
+        
+    </footer>
+    <script src="hangman.js"></script>
+    <script src="words.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

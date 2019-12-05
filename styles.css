@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Raleway;
+    background-color: #e7de59;
+    text-align: center;
+}
+header {
+    text-align: center;
+    font-size: smaller;
+    padding: 2rem 0;
+    background-color: #cd8c00;
+    width: 100%;
+}
+h1 {
+    font-weight: 300;
+    color: #e7de59
+}
+h1 span{
+    font-weight: 700;
+}
+h4 {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 3px solid #cd8c00
+}
+p {
+    margin: 2rem 0;
+}
+#puzzle {
+    font-size: 1.5rem;
+}
+#guesses {
+    font-style: italic;
+}
+button {
+    border-radius: 3px 0;
+    margin-top: 1.5rem;
+    padding: .5rem;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+button:hover {
+    color: #cd8c00
+    background-color:  #e7de59
+    transition: all 1s;
+}
+.footer {
+    text-align: center;
+    font-size: smaller;
+    margin: 2rem 0 0 0;
+    padding: 2rem 0;
+    background-color: #cd8c00;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
