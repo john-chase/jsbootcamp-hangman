@@ -15,13 +15,13 @@ const game = new Hangman(randomWord, difficulty)
 const puzzle = document.querySelector('#puzzle')
 const guesses = document.querySelector('#guesses')
 const refresh = document.querySelector('#refresh')
-puzzle.innerHTML = game.getPuzzle()
+puzzle.innerHTML = game.puzzle
 guesses.innerHTML = `${game.remainingGuesses} guesses remaining.`
 
 window.addEventListener('keypress', function(e) {
     const guess = String.fromCharCode(e.charCode)
     const result = game.makeGuess(guess)
-    puzzle.innerHTML = game.getPuzzle()
+    puzzle.innerHTML = game.puzzle
     guesses.innerHTML = `${result}`     
 })
 

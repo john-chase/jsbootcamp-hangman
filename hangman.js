@@ -16,7 +16,7 @@ class Hangman {
         this.guesses = []
         this.status = 'playing'       
     }
-    getPuzzle() {
+    get puzzle() {
         let puzzle = ''
         this.word.forEach((letter) => {
             this.guesses.includes(letter) || letter === ' ' ? puzzle += letter : puzzle += '*'
