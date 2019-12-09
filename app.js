@@ -10,18 +10,14 @@ const getLevel = () => {
     }
 }
 
-//using sync request
-const randomWord = getPuzzle()
 //using file
 // const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
-console.log(randomWord)
 const puzzleElem = document.querySelector('#puzzle')
 const guessesElem = document.querySelector('#guesses')
-const difficulty = randomWord.length + parseInt(getLevel()) || randomWord.length
-const game = new Hangman(randomWord, difficulty)
+const difficulty = puzzle.length + parseInt(getLevel()) || puzzle.length
+const game = new Hangman('test', 4) //randomWord, difficulty
 const refresh = document.querySelector('#refresh')
 puzzleElem.innerHTML = game.puzzle
-console.log(game.puzzle)
 guessesElem.innerHTML = `${game.remainingGuesses} guesses remaining.`
 
 window.addEventListener('keypress', (e) => {
@@ -30,6 +26,20 @@ window.addEventListener('keypress', (e) => {
     puzzleElem.innerHTML = game.puzzle
     guessesElem.innerHTML = `${result}`     
 })
+
+//using async fetch request
+getPuzzle('1').then((data) => {
+    console.log(data)
+}).catch((err) => {
+    console.log(`Error: ${err}`)
+})
+
+getCountry('US').then((country) => {
+    console.log(country.name)
+}).catch((err) => {
+    console.log(`Error: ${err}`)
+})
+
 
 
 document.querySelector('#refresh1').addEventListener('click', (e) => {
