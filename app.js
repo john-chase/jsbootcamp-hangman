@@ -9,21 +9,28 @@ const getLevel = () => {
         return []
     }
 }
-const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
+
+//using sync request
+const randomWord = getPuzzle()
+//using file
+// const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
+console.log(randomWord)
+const puzzleElem = document.querySelector('#puzzle')
+const guessesElem = document.querySelector('#guesses')
 const difficulty = randomWord.length + parseInt(getLevel()) || randomWord.length
 const game = new Hangman(randomWord, difficulty)
-const puzzle = document.querySelector('#puzzle')
-const guesses = document.querySelector('#guesses')
 const refresh = document.querySelector('#refresh')
-puzzle.innerHTML = game.puzzle
-guesses.innerHTML = `${game.remainingGuesses} guesses remaining.`
+puzzleElem.innerHTML = game.puzzle
+console.log(game.puzzle)
+guessesElem.innerHTML = `${game.remainingGuesses} guesses remaining.`
 
-window.addEventListener('keypress', function(e) {
+window.addEventListener('keypress', (e) => {
     const guess = String.fromCharCode(e.charCode)
     const result = game.makeGuess(guess)
-    puzzle.innerHTML = game.puzzle
-    guesses.innerHTML = `${result}`     
+    puzzleElem.innerHTML = game.puzzle
+    guessesElem.innerHTML = `${result}`     
 })
+
 
 document.querySelector('#refresh1').addEventListener('click', (e) => {
     localStorage.setItem('level', 2)
@@ -37,14 +44,3 @@ document.querySelector('#refresh3').addEventListener('click', (e) => {
     localStorage.setItem('level', -2)
     location.reload()
 })
-
-
-//API - integrate later
-// const wordUrl = "https://random-word-api.herokuapp.com//word?key=7KCZB5L8&number=1"
-// randomWord = fetch(wordUrl).then(function(response) {
-//     return response.json();
-//   }).then(function(data) {
-//     console.log(data[0]);
-//   }).catch(function() {
-//     console.log("Booo");
-//   });

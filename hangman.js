@@ -14,18 +14,12 @@ class Hangman {
         this.word = word.toLowerCase().split('') //arrayed
         this.remainingGuesses = remainingGuesses
         this.guesses = []
-        this.status = 'playing'       
+        this.status = 'playing'   
     }
     get puzzle() {
         let puzzle = ''
         this.word.forEach((letter) => {
             this.guesses.includes(letter) || letter === ' ' ? puzzle += letter : puzzle += '*'
-            //refactored from below
-            // if(this.guesses.includes(letter) || letter === ' ') {
-            //     puzzle += letter 
-            // } else {
-            //     puzzle += '*'
-            // }
         })
         return puzzle
     }    
