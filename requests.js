@@ -1,25 +1,36 @@
 'use strict'
 
-//promise w fetch
-const getPuzzle = (wordCount) => {
-    return fetch("https://random-word-api.herokuapp.com/word?key=SJ5ESC0G&number=${wordCount}", {}).then((response) => {
-        if(response.status === 200) {
-            return response.json()
-        } else {
-            throw new Error('Unable to fetch the puzzle')
-        }
-    }).then((data) =>  data[0])
+//promise w fetch and a-a
+const getPuzzle = async (wordCount) => {
+    const response = await fetch("https://random-word-api.herokuapp.com/word?key=IL4Y2VEL&number=${wordCount}", {})
+    if(response.status === 200) {
+        const data = await response.json()
+        return data[0]
+    } else {
+        throw new Error('Unable to fetch the puzzle')
+    }
 }
 
-const getCountry = (countryCode) => {
-    return fetch("https://restcountries.eu/rest/v2/all", {}).then((response) => {
-        if(response.status === 200) {
-            return response.json()
-        } else {
-            throw new Error('Unable to fetch data.')
-        }
-    }).then((data) => data.find((country) => country.alpha2Code === countryCode))
-}
+//promise w fetch
+// const getPuzzle = (wordCount) => {
+//     return fetch("https://random-word-api.herokuapp.com/word?key=IL4Y2VEL&number=${wordCount}", {}).then((response) => {
+//         if(response.status === 200) {
+//             return response.json()
+//         } else {
+//             throw new Error('Unable to fetch the puzzle')
+//         }
+//     }).then((data) =>  data[0])
+// }
+
+// const getCountry = (countryCode) => {
+//     return fetch("https://restcountries.eu/rest/v2/all", {}).then((response) => {
+//         if(response.status === 200) {
+//             return response.json()
+//         } else {
+//             throw new Error('Unable to fetch data.')
+//         }
+//     }).then((data) => data.find((country) => country.alpha2Code === countryCode)
+// }
 
 //promise w XMLHttpRequest
 // const getPuzzle = (wordCount) => new Promise((resolve, reject) => {
