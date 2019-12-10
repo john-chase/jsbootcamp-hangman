@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <link rel="icon" href="images/favicon2.png">
+    <link rel="stylesheet" href="styles/styles2.css">
+</head>
+<body>
+    <header>
+        <h1>Hangman<strong>Game</strong></h1>
+    </header>
+    <p>Enter letters or numbers (type anywhere) to guess the word and save the stickman from the gallows! Based on the old pencil and paper (or chalk and chalkboard) <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">game</a>.</p>
+    <div class="content">
+        <div>
+            <div id="puzzle" class="puzzle"><!--puzzle dynamically generated here--></div>
+            <div id="guesses"><!--guesses remaining dynamically generated here--></div>
+            <!-- <h4>Play again</h4> -->
+            <button class="button" id="refresh1">Easy</button>
+            <button class="button" id="refresh2">Moderate</button>
+            <button class="button" id="refresh3">Hard</button>
+        </div>
+    </div>
+    <footer>
+        <p class="footer">This application was created by John Chase in plain vanilla JavaScript and makes use of Local Storage and the <a href="https://random-word-api.herokuapp.com/" target="_blank">Random Word API</a>.</p>
+    </footer>
+    <script src="scripts/requests.js"></script>
+    <script src="scripts/hangman.js"></script>
+    <script src="scripts/words.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

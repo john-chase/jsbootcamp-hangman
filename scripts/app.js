@@ -16,8 +16,9 @@ const refresh = document.querySelector('#refresh')
 let game 
 
 const render = () => {
-    puzzleElem.innerHTML = game.puzzle
-    guessesElem.innerHTML = game.getStatus()    
+    puzzleElem.innerHTML = '' // game.puzzle
+    guessesElem.innerHTML = game.getStatus()  
+    game.puzzle.split('').forEach(char => puzzleElem.innerHTML += `<span>${char}</span>`)  
 }
 
 const startGame = async () => {
@@ -52,16 +53,3 @@ document.querySelector('#refresh3').addEventListener('click', (e) => {
     localStorage.setItem('level', -2)
     location.reload()
 })
-
-//using async fetch request
-// getPuzzle('1').then((data) => {
-//     console.log(data)
-// }).catch((err) => {
-//     console.log(`Error: ${err}`)
-// })
-
-// getCountry('US').then((country) => {
-//     console.log(country.name)
-// }).catch((err) => {
-//     console.log(`Error: ${err}`)
-// })
