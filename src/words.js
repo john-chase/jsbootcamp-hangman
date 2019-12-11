@@ -3091,3 +3091,5 @@ const wordsArray = [
     "zippy",
     "zonked"
 ]
+
+export {wordsArray as default}
